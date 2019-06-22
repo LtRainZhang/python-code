@@ -1,0 +1,1 @@
+"pot_en" is obtained by typing " grep 'e_b>' REPORT  | awk '{print $3}'  > pot_en & " in linux system.
