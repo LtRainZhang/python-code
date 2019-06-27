@@ -1,10 +1,10 @@
+#-*-coding:utf-8-*-
 '''
 仅在训练能量数据时使用，使用前请修改xxx.amp文件名，其他参数根据需要自行修改，在python3 环境下执行 python result-convergence.py
+如果无法使用，尝试将汉字删除
 author：Xiaoyu Zhang
 organization:NJU
 '''
-
-
 import matplotlib.pyplot as plt
 
 # judge whether number or not
@@ -30,7 +30,8 @@ fileName = 'sio2-log.txt'      # change fileName
 file = open(dirName + fileName,'r')
 eachline = file.read().split('weight duplicates:False')
 maindata = eachline[1].split('\n')[6:]
-#print(maindata)
+while '' in maindata:
+    maindata.remove('')
 c = []
 for frame1, line1 in enumerate(maindata):
     if is_number(line1.split()[0]):
@@ -52,7 +53,7 @@ print(Loss)
 print(Energy_MaxResid)
 print(EnergyRMSE)
 '''
-
+#控制图片大小
 figsize = 8,6
 figure, ax = plt.subplots(figsize=figsize)
 
