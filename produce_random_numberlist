@@ -1,0 +1,10 @@
+# coding=utf-8
+'''
+produce random_numberlist without repetition from 0 to N with total 500 number
+'''
+import random
+N = 10000
+k = 100
+n = random.sample(range(0,N), 500)
+n.sort()
+print(n)
